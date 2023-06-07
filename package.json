@@ -1,5 +1,32 @@
 {
+  "name": "zebrunnercypress",
+  "version": "1.0.0",
+  "description": "Automation Testing of Zebrunner",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^12.13.0"
+  },
+  "scripts": {
+    "cypress:run": "cypress run --env TransferProtocol='http'",
+    "cypress:run:v2": "cypress run --env TransferProtocol='https'",
+    "cypress:chrome": "cypress run --env TransferProtocol='http' --browser chrome",
+    "cypress:firefox": "cypress run --env TransferProtocol='http' --browser firefox",
+    "cypress:tablet-view": "cypress run --env TransferProtocol='http' --config viewportHeight=763,viewportWidth=700 --browser chrome",
+    "cypress:electron:headed": "cypress run --env TransferProtocol='http' --headed",
+    "cypress:firefox:headless": "cypress run --env TransferProtocol='http' --browser firefox --headless",
+    "cypress:chrome:headless": "cypress run --env TransferProtocol='http' --browser chrome --headless",
+    "cypress:run:debugger": "DEBUG=cypress:* cypress run --env TransferProtocol='http'",
+    "cypress:run:changed-port": "cypress run --env TransferProtocol='http' --port 3004",
+    "cypress:open": "cypress open --env TransferProtocol='http'",
+    "cypress:open:with-credentials": "as-a kps npx cypress open",
+    "cypress:chromium": "cypress open --browser /usr/bin/chromium",
+    "cypress:open:server-debugger": "DEBUG=cypress:server:* cypress open --env TransferProtocol='http'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
+    "as-a": "^2.2.2",
     "cypress": "^12.13.0"
   }
 }
